@@ -14,6 +14,8 @@ class Program
         DateTime lastView = DateTime.Now;
 
         Console.WriteLine("Witaj w Egipskiej Piramidzie!");
+        DisplayAsciiArt();
+        DisplayScoreAndTime(playerScore,totalTimeInSeconds );
         
         while (totalTimeInSeconds > 0)
         {
@@ -190,7 +192,7 @@ class Program
                 {
                     Console.WriteLine("\nZdobywasz wiedzę o układzie piramidy.");
                     playerScore += 10;
-                    Console.WriteLine("Łatwiej ci znaleźć wyjście.E");
+                    Console.WriteLine("Łatwiej ci znaleźć wyjście.");
                 }
                 else
                 {
@@ -203,16 +205,16 @@ class Program
                 break;
         }
     }
+    
+        static void DisplayScoreAndTime(int score, int time)
+        {
+            Console.WriteLine($"Twój wynik: {score}  |  Pozostały czas: {time / 60:D2}:{time % 60:D2}");
+        }
 
-    static void DisplayScoreAndTime(int score, int time)
-    {
-        Console.WriteLine($"Twój wynik: {score}  |  Pozostały czas: {time / 60:D2}:{time % 60:D2}");
-    }
-
-    static void DisplayAsciiArt()
-    {
-        Console.WriteLine(@"
-          .
+        static void DisplayAsciiArt()
+        {
+            Console.WriteLine(@"
+               .
               /=\\
              /===\ \
             /=====\' \
@@ -230,5 +232,6 @@ class Program
 /=============================\/
                     
 ");
-    }
+        }
+    
 }
